@@ -1,0 +1,362 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    background-color: #216E70;
+    padding: 20px 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header ul li{
+    list-style: none;
+    font-size: 1.5rem;
+    padding: 5px 0;
+}
+header ul li button{
+    cursor: pointer;
+    padding: 5px 15px;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    margin-left: 50px;
+    
+}
+header ul li button:hover{
+    background-color: #0b2d50;
+    cursor: pointer;
+    color: white;
+    transform: scale(1.3);
+    transition:all 1s;
+}
+.archive{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 150;
+}
+.notif{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+.notif:hover{
+    transform: scale(1.1);
+    transition: all 2s;
+}
+.notif .content-notif{
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translate(50%,50%);
+    border-radius: 20px;
+    width: 40vw;
+}
+.notif .header-notif{
+    /* background-color: #216E70; */
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+}
+.notif .header-notif i{
+    font-size: 5rem;
+    color: orange;
+}
+.notif .body-notif{
+    font-size: 3rem;
+    padding: 20px;
+    text-align: center;
+}
+.notif .footer-notif{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #216E70; */
+    /* padding: 0 30px; */
+}
+.notif .footer-notif #btn-annuler,#btn-valider{
+    padding: 10px 45px;
+    font-size: 2rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.notif .footer-notif #btn-annuler{
+    background-color: red;
+}
+.notif .footer-notif #btn-valider{
+    background-color: #216E70;
+}
+header .header-right i{
+    position:absolute;
+    font-size: 2.5rem;
+    color: aliceblue;
+    cursor: pointer;
+    top: -20px;
+    right:0;
+    z-index: 200;
+}
+header .header-right{
+    position: relative;    
+}
+.content{
+    width: 100%;
+    display: flex;
+    border: solid;
+    background-color: #0b2d50;
+    height: 90.5vh;
+    margin-top: 2px;
+    padding: 5px 15px;  
+}
+.colonne:first-child .value-modal .left{
+    visibility: hidden;
+}
+.colonne:last-child .value-modal .right{
+    visibility: hidden;
+}
+.colonne{
+    width: 19%;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position-x: center;
+    background-position-y: center;
+    animation: colonneAnimation 3s;
+}
+.colonne-archive{
+    position: fixed;
+    top: 90px;
+    right:0 ;
+    height: 90vh;
+    background-image: url(monLogo.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position-x: center;
+    background-position-y: center;
+    background-color: aliceblue;
+    transform: translateX(100%);
+}
+.archive.show-archive{
+    display: block;
+}
+.colonne-archive{
+    animation: archiveAnimation 2s; 
+    transform: translate(-1%);
+}
+.colonne-archive .value-modal .top .icone2{
+    visibility: visible;
+}
+.colonne-archive .value-modal .top .icone1{
+    visibility: hidden;
+}
+@keyframes archiveAnimation {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-1%);
+    }
+}
+.header-archive{
+    background-color: #0b2d50;
+    font-size: 2rem;
+    color: #216E70;
+    padding: 30px;
+}
+@keyframes colonneAnimation {
+    from{
+        margin: 30%;
+    }
+    to{
+        margin: 10px;
+    }
+}
+.header-colonne{
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 8px 0;
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+.header-colonne i{
+    float: right;
+    font-size: 2.5rem;
+    margin-top:-18px;
+    cursor: pointer;
+}
+.header-colonne:focus{
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 300;
+
+}
+.modal-container:hover{
+    transform: scale(1.1);
+    transition: all 2s;
+}
+.modal-container.show-modal{
+    display: block;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #216E70;
+    padding: 1rem 0.5rem 1rem 2rem;
+    border-radius: 10px 10px 0 0;
+}
+.modal-header i{
+    font-size: 35px;
+    /* color: aliceblue; */
+    cursor: pointer;
+    margin-top: -25px;
+}
+.modal-header h3{
+    color: aliceblue;
+}
+.modal-container .modal-label-input{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.modal-label-input .error,.errorDate,.errorTime{
+    visibility: hidden;
+}
+.modal-label-input .show-error{
+    visibility: visible;
+    color: red;
+    font-size: 1.3rem;
+}
+.modal-container .modal-label-input textarea,.modal-container .modal-label-input input{
+    margin-top: 0.5rem;
+}
+.modal-body{
+    padding:0 2rem 2rem ;
+}
+.modal-body button{
+    width: 100%;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    background-color: #216E70;
+    border: none;
+    font-size: 1.3rem;
+}
+.modal-body h4{
+    font-size: 1.5rem;
+}
+.value-modal{
+    position: relative;
+    border: solid #0b2d50;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 15vh;
+}
+.value-modal .tacheContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.value-modal .left,.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 100;
+}
+.value-modal .left{
+    color: #216E70;
+}
+.value-modal .tache{
+    font-size: 1.5rem;
+}
+.value-modal .top{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 100;
+}
+.value-modal .top .icone2{
+    visibility: hidden;
+}
+
+.value-modal .left,.right,.tache{
+    margin-top: 20px;
+}
+.value-modal .date{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    width: 100%;
+    text-align: center;
+    font-size:1.5rem;
+    transform: translateY(300%);
+}
+.value-modal:hover .date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0%);
+    transition: all 3s;
+    height: 100%;
+}

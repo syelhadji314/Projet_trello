@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <link rel="stylesheet" href="style.css">
+    <title>Projet_JS</title>
+</head>
+<body>
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>NOUVELLE TACHE</h3>
+                <i class="close-modal">&times;</i>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" name="form">
+                    <h4>Remplir les informations de la nouvelle tache</h4>
+                    <div class="modal-label-input">
+                        <label for="">Tache</label>
+                        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                        <small class="error">Ce champ est obligatoire</small>
+                    </div>
+                    <div class="modal-label-input">
+                        <label for="">Date</label>
+                        <input type="date">
+                        <small class="errorDate">La date ne doit pas etre posterieure à celle actuelle</small>
+                    </div>
+                    <div class="modal-label-input">
+                        <label for="">Heure de Debut</label>
+                        <input type="time">
+                        <small class="errorTime">L'heure de debut doit depasser l'heure actuelle</small>
+                    </div>
+                    <div class="modal-label-input">
+                        <label for="">Heure de Fin</label>
+                        <input type="time">
+                        <small class="errorTime">L'heure de fin doit depasser l'heure du debut</small>
+                    </div>
+                    <button type="button" id="bntAjouterTache" onclick="refresh(this)">Ajouter</button>
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <header>
+            <ul>
+                <li>
+                    <button type="button" id="ajout-colonne">Ajouter une Colonne</button>
+                </li>
+                <li>
+                    <button type="button"  class="note" id="tache">Ajouter une Tache</button>
+                </li>
+                <li>
+                    <button type="button"  class="etat" id="etat">Enregistrer etat</button>
+                </li>
+            </ul>
+            <div class="header-right">
+                <i class="fa-solid fa-box-archive"></i>
+            </div>
+        </header>
+        <div class="archive">
+            
+            <div class="colonne-archive">
+                <div class="header-archive">
+                    <p>MES ARCHIVES</p>
+                </div>
+                <div class="content-archive">
+                    
+                </div>
+            </div>            
+        </div>
+        <!-- <div class="content"> -->
+            <!-- <div class="colonne"> -->
+                    <!-- <h2 class="header-colonne">Mes Archives</h2> -->
+            <!-- </div> -->
+        <!--  -->
+        <!-- </div> -->
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
